@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Bank.Data.transactionTable>
+
+@{
+    ViewBag.Title = "LastTransactionsView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LastTransactionsView</h2>
+
+<p>
+    @Html.ActionLink("create", "create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.transid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.accountnumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.debit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.credit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.remark)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.transid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.accountnumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.debit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.credit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.remark)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+    </tr>
+}
+
+</table>
